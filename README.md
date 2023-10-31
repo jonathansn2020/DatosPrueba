@@ -1,5 +1,5 @@
 # DatosPrueba
-El presente repositorio contiene datos de prueba del Sistema Web Control de la Producción. De las siguientes tablas:
+El presente repositorio contiene datos de prueba del Sistema Web Control de la Producción, en las siguientes tablas:
 
 -Orders
 

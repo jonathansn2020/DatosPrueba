@@ -1,743 +1,286 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2023 a las 18:46:23
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.1.17
+--TABLE ORDERS
+INSERT INTO `orders` (`id`, `requested`, `phone`, `email`, `delivery_place`, `expected_date`, `end_date`, `note`, `order_business`, `cod_document`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Jesus Lazaro', '014900763', 'arnao_s@gmail.com', 'MZA.L.LOTE 2 ASC THE ORCHARDS OF HUACHIPA', '2023-09-15', '2023-09-10', 'Pago en soles', 'PO01969', 'ORF000000000001', '3', 6, '2023-09-08 01:14:37', '2023-09-11 11:34:32'),
+(2, 'Alejandra Portales Rodriguez', '951048569', 'aportalesr@palmas.comp.pe', 'Car. Tarapoto Yurimaguas Nro.S/N Fundo Palmas del Shanusi', '2023-09-16', '2023-09-15', 'Facturar a: INDUSTRIAS DEL SHANUSI,20450137821', '4511493540', 'ORF000000000002', '3', 5, '2023-09-08 23:57:59', '2023-09-16 07:20:35'),
+(3, 'Jesus Lazaro', '014800763', 'arnao_s@gmail.com', 'MZA.L.LOTE 2 ASC LOS HUERTOS DE HUACHIPA', '2023-09-15', '2023-09-16', 'N/A', 'PO01922', 'ORF000000000003', '3', 5, '2023-09-09 00:26:53', '2023-09-16 07:09:29'),
+(4, NULL, '013751445', 'pieriplast@gmail.com', 'Jr. Cajamarquilla 1047 - 1675 Zona Industrial Zarate', '2023-09-18', '2023-09-11', NULL, '0020006644', 'ORF000000000004', '3', 7, '2023-09-09 00:53:30', '2023-09-12 19:11:55'),
+(5, 'Alejandra Portales Rodriguez', '951048569', 'aportalesr@palmas.com.pe', 'Car. Tarapoto Yurimaguas Nro.S/N Fundo Palmas del Shanusi', '2023-08-31', '2023-09-15', 'Facturar a: INDUSTRIAS DEL SHANUSI,20450137821', 'PO01860', 'ORF000000000005', '3', 5, '2023-08-20 11:48:03', '2023-09-16 06:58:25'),
+(6, 'Alejandra Portales Rodriguez', '951048567', 'aportalesr@palmas.comp.pe', 'Car. Tarapoto Yurimaguas Nro.S/N Fundo Palmas del Shanusi', '2023-09-29', '2023-09-29', 'Facturar a: INDUSTRIAS DEL SHANUSI,20450137821', '4511494020', 'ORF000000000006', '3', 5, '2023-09-22 13:14:14', '2023-09-30 03:57:01'),
+(7, 'Alejandra Portales Rodriguez', '984958001', 'arnao_s@gmail.com', 'Car. Tarapoto Yurimaguas Nro.S/N Fundo Palmas del Shanusi', '2023-10-09', '2023-10-12', 'N/A', 'PO03860', 'ORF000000000007', '3', 6, '2023-10-06 04:38:21', '2023-10-13 02:18:04'),
+(8, 'Carlos Ruben Garcia', '951048569', 'arnao_s@gmail.com', 'Car. Tarapoto Yurimaguas Nro.S/N Fundo Palmas del Shanusi', '2023-10-10', '2023-10-10', NULL, 'PO02235', 'ORF000000000008', '3', 6, '2023-10-05 06:59:22', '2023-10-11 04:27:37');
+
+--TABLE PROJECTS
+INSERT INTO `projects` (`id`, `name`, `summary`, `long`, `width`, `thickness`, `rows`, `tube`, `progress`, `start_date_p`, `expected_date_p`, `end_date_p`, `url_photo`, `status`, `order_id`, `created_at`, `updated_at`) VALUES
+(1, 'HYDRAULIC COOLER', '(KOMATSU PC500LC) EN ALUMINIO TOTAL', 55.00, 28.00, 2.50, 3, '3/8', 100.00, '2023-09-07', '2023-09-15', '2023-09-10', 'storage/projects/Intercambiador-aireaceite.png', '3', 1, '2023-09-08 01:14:37', '2023-09-15 14:13:38'),
+(2, 'RADIATOR 180.000 BTU/H', 'N/A', 55.00, 25.00, 2.60, 3, '3/8', 100.00, '2023-09-07', '2023-09-16', '2023-09-15', 'storage/projects/radiador.jpg', '3', 2, '2023-09-08 23:57:59', '2023-09-16 12:21:27'),
+(3, 'PANAL PARA ENFRIADOR DE ACEITE', 'PANAL PARA ENFRIADOR DE ACEITE (COMPRENSOR CTN16 CINTILLO 1579) EN ALUMINIO TOTAL', 52.00, 20.00, 2.50, 3, '3/8', 100.00, '2023-09-08', '2023-09-14', '2023-09-15', 'storage/projects/ENFRIADOR-ACEITE.jpg', '3', 3, '2023-09-09 00:26:53', '2023-09-22 13:10:10'),
+(4, 'ENFRIADOR DE ACEITE PARA INYECTORA #33', NULL, 60.00, 45.00, 2.80, 3, '3/8', 100.00, '2023-09-09', '2023-09-18', '2023-09-11', 'storage/projects/operario.png', '3', 4, '2023-09-09 00:53:30', '2023-09-15 14:14:31'),
+(5, 'PANAL PARA ENFRIADOR DE ACEITE', 'PANAL PARA ENFRIADOR DE ACEITE (COMPRENSOR CTN16 CINTILLO 1579) EN ALUMINIO TOTAL', 60.00, 28.00, 2.80, 3, '3/8', 100.00, '2023-08-21', '2023-08-30', '2023-09-15', 'storage/projects/ENFRIADOR-DE-COMPRESORA-AIRE.jpg', '3', 5, '2023-08-20 11:48:03', '2023-08-20 11:59:40'),
+(6, 'RADIATOR 180.000 BTU/H', 'N/A', 50.00, 25.00, 2.60, 3, '3/8', 100.00, '2023-09-21', '2023-09-28', '2023-09-29', NULL, '3', 6, '2023-09-22 13:14:14', '2023-10-03 00:51:45'),
+(7, 'Radiador Industrial', '', 50.00, 30.00, 2.50, 3, '3/8', 100.00, '2023-10-05', '2023-10-09', '2023-10-12', 'storage/projects/radiador-industrial.jpg', '3', 7, '2023-10-06 04:38:21', '2023-10-13 07:26:08'),
+(8, 'HEAT EXCHANGER', '', 55.00, 32.00, 2.80, 3, '3/8', 100.00, '2023-10-05', '2023-10-10', '2023-10-10', NULL, '3', 8, '2023-10-06 06:59:22', '2023-10-11 04:27:36');
+
+--TABLE ACTIVITY_PROJECT
+INSERT INTO `activity_project` (`id`, `priority`, `start_date`, `expected_date`, `true_start`, `end_date`, `position`, `status`, `activity_id`, `project_id`, `operator_id`, `created_at`, `updated_at`) VALUES
+(1, 'High', '2023-09-07', '2023-09-07', '2023-09-07', NULL, 0, 'Completada', 1, 1, 1, '2023-09-07 20:20:05', '2023-09-12 18:43:34'),
+(2, 'High', '2023-09-07', '2023-09-07', '2023-09-07', '2023-09-07', 1, 'Completada', 2, 1, 1, '2023-09-07 20:20:05', '2023-09-07 20:20:29'),
+(3, 'High', '2023-09-07', '2023-09-07', '2023-09-07', '2023-09-07', 2, 'Completada', 3, 1, 1, '2023-09-07 20:20:05', '2023-09-07 20:20:34'),
+(4, 'High', '2023-09-08', '2023-09-08', '2023-09-08', '2023-09-08', 3, 'Completada', 4, 1, 2, '2023-09-07 20:20:05', '2023-09-08 20:07:14'),
+(5, 'High', '2023-09-09', '2023-09-09', '2023-09-09', '2023-09-09', 4, 'Completada', 5, 1, 3, '2023-09-07 20:20:05', '2023-09-10 09:23:19'),
+(6, 'High', '2023-09-09', '2023-09-09', '2023-09-09', '2023-09-09', 5, 'Completada', 6, 1, 2, '2023-09-07 20:20:05', '2023-09-10 09:23:24'),
+(7, 'High', '2023-09-11', '2023-09-11', '2023-09-10', '2023-09-10', 1, 'Completada', 7, 1, 3, '2023-09-07 20:20:05', '2023-09-11 11:34:07'),
+(8, 'High', '2023-09-11', '2023-09-11', '2023-09-10', '2023-09-10', 0, 'Completada', 8, 1, 1, '2023-09-07 20:20:05', '2023-09-11 11:34:15'),
+(9, 'High', '2023-09-12', '2023-09-12', '2023-09-10', '2023-09-10', 1, 'Completada', 9, 1, 2, '2023-09-07 20:20:05', '2023-09-11 11:34:23'),
+(10, 'High', '2023-09-13', '2023-09-13', '2023-09-10', '2023-09-10', 1, 'Completada', 10, 1, 3, '2023-09-07 20:20:05', '2023-09-11 11:34:24'),
+(11, 'High', '2023-09-14', '2023-09-14', '2023-09-10', '2023-09-10', 2, 'Completada', 11, 1, 2, '2023-09-07 20:20:05', '2023-09-11 11:34:27'),
+(12, 'High', '2023-09-14', '2023-09-15', '2023-09-10', '2023-09-10', 1, 'Completada', 12, 1, 3, '2023-09-07 20:20:05', '2023-09-11 11:34:32'),
+(13, 'High', '2023-09-07', '2023-09-07', '2023-09-07', '2023-09-07', 0, 'Completada', 1, 2, 1, '2023-09-08 19:02:14', '2023-09-08 19:02:31'),
+(14, 'High', '2023-09-07', '2023-09-07', '2023-09-07', '2023-09-07', 1, 'Completada', 2, 2, 2, '2023-09-08 19:02:14', '2023-09-08 19:02:34'),
+(15, 'High', '2023-09-07', '2023-09-07', '2023-09-08', '2023-09-08', 2, 'Completada', 3, 2, 3, '2023-09-08 19:02:14', '2023-09-08 20:05:31'),
+(16, 'High', '2023-09-08', '2023-09-08', '2023-09-08', '2023-09-08', 2, 'Completada', 4, 2, 1, '2023-09-08 19:02:14', '2023-09-09 18:00:03'),
+(17, 'High', '2023-09-09', '2023-09-09', '2023-09-08', '2023-09-08', 4, 'Completada', 5, 2, 2, '2023-09-08 19:02:14', '2023-09-09 18:20:50'),
+(18, 'High', '2023-09-09', '2023-09-09', '2023-09-08', '2023-09-09', 5, 'Completada', 6, 2, 1, '2023-09-08 19:02:14', '2023-09-10 09:23:07'),
+(19, 'High', '2023-09-11', '2023-09-11', '2023-09-10', '2023-09-10', 0, 'Completada', 7, 2, 2, '2023-09-08 19:02:14', '2023-09-11 13:35:53'),
+(20, 'High', '2023-09-11', '2023-09-11', '2023-09-11', '2023-09-11', 4, 'Completada', 8, 2, 3, '2023-09-08 19:02:14', '2023-09-12 18:23:45'),
+(21, 'High', '2023-09-12', '2023-09-12', '2023-09-12', '2023-09-12', 1, 'Completada', 9, 2, 3, '2023-09-08 19:02:14', '2023-09-13 11:55:30'),
+(22, 'High', '2023-09-13', '2023-09-13', '2023-09-14', '2023-09-14', 0, 'Completada', 10, 2, 2, '2023-09-08 19:02:14', '2023-09-15 11:26:38'),
+(23, 'High', '2023-09-14', '2023-09-14', '2023-09-15', '2023-09-15', 1, 'Completada', 11, 2, 1, '2023-09-08 19:02:15', '2023-09-16 07:20:14'),
+(24, 'High', '2023-09-15', '2023-09-15', '2023-09-15', '2023-09-15', 1, 'Completada', 12, 2, 2, '2023-09-08 19:02:15', '2023-09-16 07:20:35'),
+(25, 'High', '2023-09-08', '2023-09-08', '2023-09-08', '2023-09-08', 0, 'Completada', 1, 3, 1, '2023-09-08 19:33:07', '2023-09-09 17:56:11'),
+(26, 'High', '2023-09-08', '2023-09-08', '2023-09-08', '2023-09-08', 0, 'Completada', 2, 3, 2, '2023-09-08 19:33:07', '2023-09-09 17:56:16'),
+(27, 'High', '2023-09-08', '2023-09-08', '2023-09-08', '2023-09-09', 2, 'Completada', 3, 3, 3, '2023-09-08 19:33:07', '2023-09-10 09:22:50'),
+(28, 'High', '2023-09-09', '2023-09-09', '2023-09-09', '2023-09-09', 3, 'Completada', 4, 3, 2, '2023-09-08 19:33:07', '2023-09-10 09:22:57'),
+(29, 'High', '2023-09-10', '2023-09-10', '2023-09-11', '2023-09-11', 4, 'Completada', 5, 3, 3, '2023-09-08 19:33:07', '2023-09-12 18:23:22'),
+(30, 'High', '2023-09-11', '2023-09-11', '2023-09-11', '2023-09-11', 4, 'Completada', 6, 3, 2, '2023-09-08 19:33:08', '2023-09-12 18:23:26'),
+(31, 'High', '2023-09-11', '2023-09-11', '2023-09-11', '2023-09-11', 4, 'Completada', 7, 3, 1, '2023-09-08 19:33:08', '2023-09-12 18:23:29'),
+(32, 'High', '2023-09-11', '2023-09-11', '2023-09-12', '2023-09-12', 0, 'Completada', 8, 3, 3, '2023-09-08 19:33:08', '2023-09-13 10:58:01'),
+(33, 'High', '2023-09-12', '2023-09-12', '2023-09-12', NULL, 7, 'Completada', 9, 3, 2, '2023-09-08 19:33:08', '2023-09-16 07:08:41'),
+(34, 'High', '2023-09-13', '2023-09-13', '2023-09-13', '2023-09-14', 0, 'Completada', 10, 3, 3, '2023-09-08 19:33:08', '2023-09-15 11:27:28'),
+(35, 'High', '2023-09-14', '2023-09-14', '2023-09-15', '2023-09-15', 1, 'Completada', 11, 3, 1, '2023-09-08 19:33:08', '2023-09-16 07:09:25'),
+(36, 'High', '2023-09-14', '2023-09-14', '2023-09-15', NULL, 10, 'Completada', 12, 3, 2, '2023-09-08 19:33:08', '2023-09-17 01:21:50'),
+(37, 'High', '2023-09-09', '2023-09-09', '2023-09-09', '2023-09-09', 0, 'Completada', 1, 4, 1, '2023-09-10 09:27:49', '2023-09-10 09:28:34'),
+(38, 'High', '2023-09-09', '2023-09-09', '2023-09-09', '2023-09-09', 1, 'Completada', 2, 4, 1, '2023-09-10 09:27:49', '2023-09-10 09:28:38'),
+(39, 'High', '2023-09-09', '2023-09-09', '2023-09-09', '2023-09-09', 2, 'Completada', 3, 4, 1, '2023-09-10 09:27:49', '2023-09-10 09:28:42'),
+(40, 'High', '2023-09-11', '2023-09-11', '2023-09-11', '2023-09-11', 3, 'Completada', 4, 4, 2, '2023-09-10 09:27:49', '2023-09-12 18:23:05'),
+(41, 'High', '2023-09-11', '2023-09-11', '2023-09-11', '2023-09-11', 4, 'Completada', 5, 4, 1, '2023-09-10 09:27:49', '2023-09-12 19:09:25'),
+(42, 'High', '2023-09-12', '2023-09-12', '2023-09-11', '2023-09-11', 5, 'Completada', 6, 4, 3, '2023-09-10 09:27:49', '2023-09-12 19:11:16'),
+(43, 'High', '2023-09-13', '2023-09-13', '2023-09-11', '2023-09-11', 5, 'Completada', 7, 4, 2, '2023-09-10 09:27:49', '2023-09-12 19:11:23'),
+(44, 'High', '2023-09-13', '2023-09-13', '2023-09-11', '2023-09-11', 6, 'Completada', 8, 4, 3, '2023-09-10 09:27:49', '2023-09-12 19:11:32'),
+(45, 'High', '2023-09-14', '2023-09-14', '2023-09-11', '2023-09-11', 5, 'Completada', 9, 4, 2, '2023-09-10 09:27:49', '2023-09-12 19:11:37'),
+(46, 'High', '2023-09-15', '2023-09-15', '2023-09-11', '2023-09-11', 5, 'Completada', 10, 4, 1, '2023-09-10 09:27:49', '2023-09-12 19:11:42'),
+(47, 'High', '2023-09-16', '2023-09-16', '2023-09-11', NULL, 10, 'Completada', 11, 4, 3, '2023-09-10 09:27:49', '2023-09-12 19:12:25'),
+(48, 'High', '2023-09-17', '2023-09-18', '2023-09-11', NULL, 10, 'Completada', 12, 4, 2, '2023-09-10 09:27:49', '2023-09-12 19:12:09'),
+(49, 'High', '2023-08-21', '2023-08-21', '2023-09-15', '2023-09-15', 0, 'Completada', 1, 5, 2, '2023-09-16 06:57:21', '2023-09-16 06:57:37'),
+(50, 'High', '2023-08-21', '2023-08-21', '2023-09-15', '2023-09-15', 0, 'Completada', 2, 5, 3, '2023-09-16 06:57:21', '2023-09-16 06:57:43'),
+(51, 'High', '2023-08-22', '2023-08-22', '2023-09-15', '2023-09-15', 2, 'Completada', 3, 5, 1, '2023-09-16 06:57:21', '2023-09-16 06:57:48'),
+(52, 'High', '2023-08-23', '2023-08-23', '2023-09-15', '2023-09-15', 3, 'Completada', 4, 5, 4, '2023-09-16 06:57:21', '2023-09-16 06:57:53'),
+(53, 'High', '2023-08-23', '2023-08-23', '2023-09-15', '2023-09-15', 4, 'Completada', 5, 5, 5, '2023-09-16 06:57:21', '2023-09-16 06:57:57'),
+(54, 'High', '2023-08-24', '2023-08-24', '2023-09-15', '2023-09-15', 5, 'Completada', 6, 5, 1, '2023-09-16 06:57:21', '2023-09-16 06:58:02'),
+(55, 'High', '2023-08-25', '2023-08-25', '2023-09-15', '2023-09-15', 4, 'Completada', 7, 5, 2, '2023-09-16 06:57:21', '2023-09-16 06:58:06'),
+(56, 'High', '2023-08-26', '2023-08-26', '2023-09-15', '2023-09-15', 2, 'Completada', 8, 5, 3, '2023-09-16 06:57:21', '2023-09-16 06:58:10'),
+(57, 'High', '2023-08-28', '2023-08-28', '2023-09-15', '2023-09-15', 3, 'Completada', 9, 5, 3, '2023-09-16 06:57:22', '2023-09-16 06:58:13'),
+(58, 'High', '2023-08-29', '2023-08-29', '2023-09-15', '2023-09-15', 2, 'Completada', 10, 5, 1, '2023-09-16 06:57:22', '2023-09-16 06:58:17'),
+(59, 'High', '2023-08-29', '2023-08-29', '2023-09-15', '2023-09-15', 3, 'Completada', 11, 5, 5, '2023-09-16 06:57:22', '2023-09-16 06:58:21'),
+(60, 'High', '2023-08-30', '2023-08-30', '2023-09-15', '2023-09-15', 3, 'Completada', 12, 5, 4, '2023-09-16 06:57:22', '2023-09-16 06:58:25'),
+(61, 'High', '2023-09-21', '2023-09-21', '2023-09-21', '2023-09-21', 0, 'Completada', 1, 6, 1, '2023-09-22 08:16:51', '2023-09-22 08:17:10'),
+(62, 'High', '2023-09-21', '2023-09-21', '2023-09-21', '2023-09-21', 1, 'Completada', 2, 6, 3, '2023-09-22 08:16:51', '2023-09-22 08:17:15'),
+(63, 'High', '2023-09-21', '2023-09-21', '2023-09-21', '2023-09-21', 2, 'Completada', 3, 6, 2, '2023-09-22 08:16:51', '2023-09-22 08:17:19'),
+(64, 'High', '2023-09-22', '2023-09-22', '2023-09-21', '2023-09-21', 3, 'Completada', 4, 6, 2, '2023-09-22 08:16:51', '2023-09-22 08:17:24'),
+(65, 'High', '2023-09-22', '2023-09-22', '2023-09-21', '2023-09-21', 4, 'Completada', 5, 6, 5, '2023-09-22 08:16:52', '2023-09-22 08:17:36'),
+(66, 'High', '2023-09-23', '2023-09-23', '2023-09-23', '2023-09-23', 5, 'Completada', 6, 6, 4, '2023-09-22 08:16:52', '2023-09-23 22:28:48'),
+(67, 'High', '2023-09-24', '2023-09-24', '2023-09-23', '2023-09-23', 6, 'Completada', 7, 6, 1, '2023-09-22 08:16:52', '2023-09-23 22:31:51'),
+(68, 'High', '2023-09-24', '2023-09-24', '2023-09-23', '2023-09-23', 2, 'Completada', 8, 6, 2, '2023-09-22 08:16:52', '2023-09-24 00:42:59'),
+(69, 'High', '2023-09-25', '2023-09-25', '2023-09-25', '2023-09-25', 4, 'Completada', 9, 6, 3, '2023-09-22 08:16:52', '2023-09-25 17:55:16'),
+(70, 'High', '2023-09-26', '2023-09-26', '2023-09-25', '2023-09-25', 4, 'Completada', 10, 6, 5, '2023-09-22 08:16:52', '2023-09-25 17:55:45'),
+(71, 'High', '2023-09-27', '2023-09-27', '2023-09-29', '2023-09-29', 0, 'Completada', 11, 6, 2, '2023-09-22 08:16:52', '2023-09-30 03:39:22'),
+(72, 'High', '2023-09-28', '2023-09-28', '2023-09-29', '2023-09-29', 1, 'Completada', 12, 6, 4, '2023-09-22 08:16:52', '2023-09-30 03:57:01'),
+(73, 'High', '2023-10-05', '2023-10-05', '2023-10-05', '2023-10-05', 0, 'Completada', 1, 7, 1, '2023-10-05 23:41:54', '2023-10-05 23:42:37'),
+(74, 'High', '2023-10-05', '2023-10-05', '2023-10-05', '2023-10-05', 1, 'Completada', 2, 7, 3, '2023-10-05 23:41:54', '2023-10-05 23:42:45'),
+(75, 'High', '2023-10-05', '2023-10-05', '2023-10-05', '2023-10-05', 2, 'Completada', 3, 7, 2, '2023-10-05 23:41:54', '2023-10-05 23:42:50'),
+(76, 'High', '2023-10-05', '2023-10-05', '2023-10-05', '2023-10-05', 3, 'Completada', 4, 7, 5, '2023-10-05 23:41:54', '2023-10-05 23:43:20'),
+(77, 'High', '2023-10-06', '2023-10-06', '2023-10-05', '2023-10-05', 4, 'Completada', 5, 7, 3, '2023-10-05 23:41:54', '2023-10-05 23:43:29'),
+(78, 'High', '2023-10-06', '2023-10-06', '2023-10-05', '2023-10-05', 5, 'Completada', 6, 7, 4, '2023-10-05 23:41:54', '2023-10-05 23:58:54'),
+(79, 'High', '2023-10-06', '2023-10-06', '2023-10-05', '2023-10-05', 5, 'Completada', 7, 7, 1, '2023-10-05 23:41:54', '2023-10-05 23:58:59'),
+(80, 'High', '2023-10-07', '2023-10-07', '2023-10-05', '2023-10-05', 2, 'Completada', 8, 7, 5, '2023-10-05 23:41:54', '2023-10-05 23:59:03'),
+(81, 'High', '2023-10-07', '2023-10-07', '2023-10-05', '2023-10-05', 3, 'Completada', 9, 7, 1, '2023-10-05 23:41:54', '2023-10-05 23:59:08'),
+(82, 'High', '2023-10-07', '2023-10-07', '2023-10-05', '2023-10-05', 2, 'Completada', 10, 7, 3, '2023-10-05 23:41:54', '2023-10-05 23:59:12'),
+(83, 'High', '2023-10-08', '2023-10-08', '2023-10-05', '2023-10-05', 2, 'Completada', 11, 7, 5, '2023-10-05 23:41:54', '2023-10-05 23:59:15'),
+(84, 'High', '2023-10-08', '2023-10-09', '2023-10-12', '2023-10-12', 0, 'Completada', 12, 7, 2, '2023-10-05 23:41:55', '2023-10-13 02:18:04'),
+(85, 'High', '2023-10-05', '2023-10-05', '2023-10-05', '2023-10-05', 0, 'Completada', 1, 8, 2, '2023-10-06 02:01:13', '2023-10-06 04:23:44'),
+(86, 'High', '2023-10-05', '2023-10-05', '2023-10-05', '2023-10-05', 1, 'Completada', 2, 8, 4, '2023-10-06 02:01:13', '2023-10-06 04:23:49'),
+(87, 'High', '2023-10-05', '2023-10-05', '2023-10-05', '2023-10-05', 2, 'Completada', 3, 8, 1, '2023-10-06 02:01:13', '2023-10-06 04:23:53'),
+(88, 'High', '2023-10-06', '2023-10-06', '2023-10-06', '2023-10-06', 3, 'Completada', 4, 8, 5, '2023-10-06 02:01:13', '2023-10-06 19:21:36'),
+(89, 'High', '2023-10-06', '2023-10-06', '2023-10-06', '2023-10-06', 4, 'Completada', 5, 8, 2, '2023-10-06 02:01:13', '2023-10-06 19:21:42'),
+(90, 'High', '2023-10-06', '2023-10-06', '2023-10-06', '2023-10-10', 5, 'Completada', 6, 8, 3, '2023-10-06 02:01:13', '2023-10-11 04:27:16'),
+(91, 'High', '2023-10-07', '2023-10-07', '2023-10-10', '2023-10-10', 2, 'Completada', 7, 8, 4, '2023-10-06 02:01:13', '2023-10-11 04:27:19'),
+(92, 'High', '2023-10-07', '2023-10-07', '2023-10-10', '2023-10-10', 2, 'Completada', 8, 8, 1, '2023-10-06 02:01:13', '2023-10-11 04:27:22'),
+(93, 'High', '2023-10-08', '2023-10-08', '2023-10-10', '2023-10-10', 2, 'Completada', 9, 8, 4, '2023-10-06 02:01:13', '2023-10-11 04:27:26'),
+(94, 'High', '2023-10-09', '2023-10-09', '2023-10-10', '2023-10-10', 2, 'Completada', 10, 8, 2, '2023-10-06 02:01:13', '2023-10-11 04:27:30'),
+(95, 'High', '2023-10-09', '2023-10-09', '2023-10-10', '2023-10-10', 2, 'Completada', 11, 8, 5, '2023-10-06 02:01:13', '2023-10-11 04:27:33'),
+(96, 'High', '2023-10-10', '2023-10-10', '2023-10-10', '2023-10-10', 2, 'Completada', 12, 8, 3, '2023-10-06 02:01:13', '2023-10-11 04:27:36');
+
+--TABLE COMMENTS
+INSERT INTO `comments` (`id`, `body`, `user_id`, `activity_project_id`, `created_at`, `updated_at`) VALUES
+(1, 'Los rollos cobre fueron llevados al área de corte para su respectivo tratamiento.', 2, 66, '2023-09-23 20:24:11', '2023-10-03 20:39:51'),
+(2, 'Se realizo el corte de los tubos haciendo uso de la cizalla y empleando un operario.', 2, 66, '2023-09-23 20:25:05', '2023-09-23 20:25:05'),
+(3, 'Los tubos cortados a medida serán transalados al almacén para su posterior llenado.', 2, 66, '2023-09-23 20:26:55', '2023-09-23 20:26:55'),
+(4, 'Se realiza una pequeña limpieza a los tubos para continuar con el trabajo de acondiciomiento.', 2, 66, '2023-09-23 20:28:55', '2023-09-23 20:42:10'),
+(5, 'Se adjunta evidencia del trabajo realizado.', 2, 66, '2023-09-23 20:48:54', '2023-09-23 20:48:54'),
+(6, 'Hubieron mejoras por hacer', 3, 84, '2023-10-06 06:31:34', '2023-10-06 06:38:42'),
+(7, 'El trabajo se realizo conforme a lo acordado.', 3, 84, '2023-10-06 06:38:32', '2023-10-06 20:09:45'),
+(8, 'Las bobinas de cobre fueron llevadas al área de corte para su tratamiento.', 3, 90, '2023-10-07 01:48:03', '2023-10-07 01:48:03'),
+(9, 'Los tubos se cortaron utilizando una máquina cizalla y un operador.', 3, 90, '2023-10-07 01:48:20', '2023-10-07 01:48:20'),
+(10, 'Los tubos cortados a medida se transportarán al almacén para su posterior llenado.', 3, 90, '2023-10-07 01:48:31', '2023-10-07 01:48:31'),
+(11, 'Se realiza una pequeña limpieza de los tubos para continuar con los trabajos de acondicionamiento.', 3, 90, '2023-10-07 01:48:41', '2023-10-07 01:48:41'),
+(12, 'Se adjunta evidencia del trabajo realizado.', 3, 90, '2023-10-07 01:50:16', '2023-10-07 01:50:16');
+
+--TABLE ROLES
+INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+(1, 'Administrador', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(2, 'Asistente', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(3, 'Cliente', 'web', '2023-09-25 20:50:15', '2023-09-25 20:50:15'),
+(4, 'Jefe de Producción', 'web', '2023-10-10 20:41:37', '2023-10-10 20:41:37');
+
+--TABLE PERMISSIONS
+INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+(1, 'Crear Usuarios', 'web', '2023-09-25 20:50:08', '2023-09-25 20:50:08'),
+(2, 'Listar Usuarios', 'web', '2023-09-25 20:50:08', '2023-09-25 20:50:08'),
+(3, 'Actualizar Usuarios', 'web', '2023-09-25 20:50:08', '2023-09-25 20:50:08'),
+(4, 'Eliminar Usuarios', 'web', '2023-09-25 20:50:08', '2023-09-25 20:50:08'),
+(5, 'Crear Roles', 'web', '2023-09-25 20:50:08', '2023-09-25 20:50:08'),
+(6, 'Listar Roles', 'web', '2023-09-25 20:50:09', '2023-09-25 20:50:09'),
+(7, 'Actualizar Roles', 'web', '2023-09-25 20:50:09', '2023-09-25 20:50:09'),
+(8, 'Eliminar Roles', 'web', '2023-09-25 20:50:09', '2023-09-25 20:50:09'),
+(9, 'Crear Etapas', 'web', '2023-09-25 20:50:09', '2023-09-25 20:50:09'),
+(10, 'Listar Etapas', 'web', '2023-09-25 20:50:09', '2023-09-25 20:50:09'),
+(11, 'Actualizar Etapas', 'web', '2023-09-25 20:50:10', '2023-09-25 20:50:10'),
+(12, 'Eliminar Etapas', 'web', '2023-09-25 20:50:10', '2023-09-25 20:50:10'),
+(13, 'Crear Actividades', 'web', '2023-09-25 20:50:10', '2023-09-25 20:50:10'),
+(14, 'Listar Actividades', 'web', '2023-09-25 20:50:10', '2023-09-25 20:50:10'),
+(15, 'Actualizar Actividades', 'web', '2023-09-25 20:50:11', '2023-09-25 20:50:11'),
+(16, 'Eliminar Actividades', 'web', '2023-09-25 20:50:11', '2023-09-25 20:50:11'),
+(17, 'Crear Operarios', 'web', '2023-09-25 20:50:11', '2023-09-25 20:50:11'),
+(18, 'Listar Operarios', 'web', '2023-09-25 20:50:12', '2023-09-25 20:50:12'),
+(19, 'Actualizar Operarios', 'web', '2023-09-25 20:50:13', '2023-09-25 20:50:13'),
+(20, 'Eliminar Operarios', 'web', '2023-09-25 20:50:13', '2023-09-25 20:50:13'),
+(21, 'Crear Ordenes', 'web', '2023-09-25 20:50:13', '2023-09-25 20:50:13'),
+(22, 'Listar Ordenes', 'web', '2023-09-25 20:50:13', '2023-09-25 20:50:13'),
+(23, 'Ver Ordenes', 'web', '2023-09-25 20:50:13', '2023-09-25 20:50:13'),
+(24, 'Actualizar Ordenes', 'web', '2023-09-25 20:50:13', '2023-09-25 20:50:13'),
+(25, 'Eliminar Ordenes', 'web', '2023-09-25 20:50:13', '2023-09-25 20:50:13'),
+(26, 'Planificar Proyectos', 'web', '2023-09-25 20:50:13', '2023-09-25 20:50:13'),
+(27, 'Listar Proyectos', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(28, 'Ver Proyectos', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(29, 'Actualizar Proyectos', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(30, 'Realizar Control de Radiadores', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(31, 'Listar Producción de Radiadores', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(32, 'Ver Gráfico de Reprocesos de Radiadores', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(33, 'Ver Detalle de Reprocesos de Radiadores', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(34, 'Ver Gráfico Ordenes Retrasadas', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(35, 'Ver Gráfico Ordenes Entregadas a Tiempo', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(36, 'Ver Dashboard', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(37, 'Ver Menú Clientes', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(38, 'Listar Reportes Gráficos', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(39, 'Cambiar Password', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(40, 'Listar Reportes PDF', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(41, 'Ver reporte pdf de ordenes entregadas a tiempo', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(42, 'Ver reporte pdf de actividades con reproceso', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14'),
+(43, 'Ver reporte pdf de operario con reproceso', 'web', '2023-09-25 20:50:14', '2023-09-25 20:50:14');
+
+--TABLE ROLE_HAS_PERMISSIONS
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
+(1, 1),
+(1, 2),
+(2, 1),
+(2, 2),
+(3, 1),
+(3, 2),
+(4, 1),
+(5, 1),
+(5, 2),
+(6, 1),
+(6, 2),
+(7, 1),
+(7, 2),
+(8, 1),
+(9, 1),
+(9, 2),
+(10, 1),
+(10, 2),
+(11, 1),
+(11, 2),
+(12, 1),
+(13, 1),
+(13, 2),
+(14, 1),
+(14, 2),
+(15, 1),
+(15, 2),
+(16, 1),
+(17, 1),
+(17, 2),
+(18, 1),
+(18, 2),
+(19, 1),
+(19, 2),
+(20, 1),
+(21, 1),
+(21, 2),
+(22, 1),
+(22, 2),
+(23, 1),
+(23, 2),
+(24, 1),
+(24, 2),
+(25, 1),
+(26, 1),
+(26, 2),
+(27, 1),
+(27, 2),
+(28, 1),
+(28, 2),
+(29, 1),
+(29, 2),
+(30, 1),
+(30, 2),
+(30, 4),
+(31, 1),
+(31, 2),
+(31, 4),
+(32, 1),
+(32, 2),
+(32, 4),
+(33, 1),
+(33, 2),
+(33, 4),
+(34, 1),
+(34, 2),
+(35, 1),
+(35, 2),
+(36, 1),
+(36, 2),
+(37, 3),
+(38, 1),
+(38, 2),
+(39, 1),
+(39, 2),
+(40, 1),
+(40, 2),
+(41, 1),
+(41, 2),
+(42, 1),
+(42, 2),
+(43, 1),
+(43, 2);
+
+--TABLE MODEL_HAS_ROLES
+INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
+(1, 'App\\Models\\User', 1),
+(1, 'App\\Models\\User', 2),
+(1, 'App\\Models\\User', 3),
+(2, 'App\\Models\\User', 4),
+(3, 'App\\Models\\User', 5),
+(3, 'App\\Models\\User', 6),
+(3, 'App\\Models\\User', 7),
+(4, 'App\\Models\\User', 8);
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `radiadores`
---
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `activities`
---
-
-CREATE TABLE `activities` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `stage_id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `activities`
---
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `activity_project`
---
-
-CREATE TABLE `activity_project` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `priority` varchar(20) NOT NULL,
-  `start_date` date NOT NULL,
-  `expected_date` date NOT NULL,
-  `true_start` date DEFAULT NULL,
-  `end_date` date DEFAULT NULL,
-  `position` int(11) DEFAULT NULL,
-  `status` enum('Entrada','Proceso','Completada') NOT NULL DEFAULT 'Entrada',
-  `activity_id` bigint(20) UNSIGNED NOT NULL,
-  `project_id` bigint(20) UNSIGNED NOT NULL,
-  `operator_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `activity_project`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `comments`
---
-
-CREATE TABLE `comments` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `body` text NOT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `activity_project_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `comments`--
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `failed_jobs`
---
-
-CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `migrations`
---
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `model_has_permissions`
---
-
-CREATE TABLE `model_has_permissions` (
-  `permission_id` bigint(20) UNSIGNED NOT NULL,
-  `model_type` varchar(255) NOT NULL,
-  `model_id` bigint(20) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `model_has_roles`
---
-
-CREATE TABLE `model_has_roles` (
-  `role_id` bigint(20) UNSIGNED NOT NULL,
-  `model_type` varchar(255) NOT NULL,
-  `model_id` bigint(20) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `model_has_roles`
---
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `operators`
---
-
-CREATE TABLE `operators` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `document` varchar(9) NOT NULL,
-  `phone` varchar(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `position` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `operators`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `orders`
---
-
-CREATE TABLE `orders` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `requested` varchar(45) DEFAULT NULL,
-  `phone` varchar(15) NOT NULL,
-  `email` varchar(35) NOT NULL,
-  `delivery_place` varchar(255) NOT NULL,
-  `expected_date` date NOT NULL,
-  `end_date` date DEFAULT NULL,
-  `note` text DEFAULT NULL,
-  `order_business` varchar(255) NOT NULL,
-  `cod_document` varchar(15) NOT NULL,
-  `status` enum('1','2','3') NOT NULL DEFAULT '1',
-  `user_id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `orders`
---
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `password_resets`
---
-
-CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `permissions`
---
-
-CREATE TABLE `permissions` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `guard_name` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `permissions`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `personal_access_tokens`
---
-
-CREATE TABLE `personal_access_tokens` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
-  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
-  `last_used_at` timestamp NULL DEFAULT NULL,
-  `expires_at` timestamp NULL DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `projects`
---
-
-CREATE TABLE `projects` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `summary` text DEFAULT NULL,
-  `long` double(5,2) NOT NULL,
-  `width` double(5,2) NOT NULL,
-  `thickness` double(5,2) NOT NULL,
-  `rows` int(11) NOT NULL,
-  `tube` varchar(255) NOT NULL,
-  `progress` double(8,2) DEFAULT 0.00,
-  `start_date_p` date NOT NULL,
-  `expected_date_p` date NOT NULL,
-  `end_date_p` date DEFAULT NULL,
-  `url_photo` varchar(2048) DEFAULT NULL,
-  `status` enum('1','2','3') NOT NULL DEFAULT '1',
-  `order_id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `projects`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `resources`
---
-
-CREATE TABLE `resources` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `resourceable_id` bigint(20) UNSIGNED NOT NULL,
-  `resourceable_type` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `resources`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reworks`
---
-
-CREATE TABLE `reworks` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `start_date` date NOT NULL,
-  `hour` time NOT NULL,
-  `start` date DEFAULT NULL,
-  `start_hour` time DEFAULT NULL,
-  `end` date DEFAULT NULL,
-  `end_hour` time DEFAULT NULL,
-  `activity_project_id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `reworks`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `roles`
---
-
-CREATE TABLE `roles` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `guard_name` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `roles`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `role_has_permissions`
---
-
-CREATE TABLE `role_has_permissions` (
-  `permission_id` bigint(20) UNSIGNED NOT NULL,
-  `role_id` bigint(20) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `role_has_permissions`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `sessions`
---
-
-CREATE TABLE `sessions` (
-  `id` varchar(255) NOT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `user_agent` text DEFAULT NULL,
-  `payload` longtext NOT NULL,
-  `last_activity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `sessions`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `stages`
---
-
-CREATE TABLE `stages` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(65) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `stages`
---
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `users`
---
-
-CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `two_factor_secret` text DEFAULT NULL,
-  `two_factor_recovery_codes` text DEFAULT NULL,
-  `two_factor_confirmed_at` timestamp NULL DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
-  `current_team_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `profile_photo_path` varchar(2048) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `users`
---
-
-
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `activities`
---
-ALTER TABLE `activities`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `activities_stage_id_foreign` (`stage_id`);
-
---
--- Indices de la tabla `activity_project`
---
-ALTER TABLE `activity_project`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `activity_project_activity_id_foreign` (`activity_id`),
-  ADD KEY `activity_project_project_id_foreign` (`project_id`),
-  ADD KEY `activity_project_operator_id_foreign` (`operator_id`);
-
---
--- Indices de la tabla `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `comments_user_id_foreign` (`user_id`),
-  ADD KEY `comments_activity_project_id_foreign` (`activity_project_id`);
-
---
--- Indices de la tabla `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
-
---
--- Indices de la tabla `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `model_has_permissions`
---
-ALTER TABLE `model_has_permissions`
-  ADD PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
-  ADD KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`);
-
---
--- Indices de la tabla `model_has_roles`
---
-ALTER TABLE `model_has_roles`
-  ADD PRIMARY KEY (`role_id`,`model_id`,`model_type`),
-  ADD KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`);
-
---
--- Indices de la tabla `operators`
---
-ALTER TABLE `operators`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `operators_phone_unique` (`phone`),
-  ADD UNIQUE KEY `operators_email_unique` (`email`);
-
---
--- Indices de la tabla `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `orders_cod_document_unique` (`cod_document`),
-  ADD KEY `orders_user_id_foreign` (`user_id`);
-
---
--- Indices de la tabla `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD PRIMARY KEY (`email`);
-
---
--- Indices de la tabla `permissions`
---
-ALTER TABLE `permissions`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`);
-
---
--- Indices de la tabla `personal_access_tokens`
---
-ALTER TABLE `personal_access_tokens`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
-  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
-
---
--- Indices de la tabla `projects`
---
-ALTER TABLE `projects`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `projects_order_id_foreign` (`order_id`);
-
---
--- Indices de la tabla `resources`
---
-ALTER TABLE `resources`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `reworks`
---
-ALTER TABLE `reworks`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `reworks_activity_project_id_foreign` (`activity_project_id`);
-
---
--- Indices de la tabla `roles`
---
-ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `roles_name_guard_name_unique` (`name`,`guard_name`);
-
---
--- Indices de la tabla `role_has_permissions`
---
-ALTER TABLE `role_has_permissions`
-  ADD PRIMARY KEY (`permission_id`,`role_id`),
-  ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
-
---
--- Indices de la tabla `sessions`
---
-ALTER TABLE `sessions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `sessions_user_id_index` (`user_id`),
-  ADD KEY `sessions_last_activity_index` (`last_activity`);
-
---
--- Indices de la tabla `stages`
---
-ALTER TABLE `stages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `activities`
---
-ALTER TABLE `activities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de la tabla `activity_project`
---
-ALTER TABLE `activity_project`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
-
---
--- AUTO_INCREMENT de la tabla `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de la tabla `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT de la tabla `operators`
---
-ALTER TABLE `operators`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
-
---
--- AUTO_INCREMENT de la tabla `permissions`
---
-ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
-
---
--- AUTO_INCREMENT de la tabla `personal_access_tokens`
---
-ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `projects`
---
-ALTER TABLE `projects`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT de la tabla `resources`
---
-ALTER TABLE `resources`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `reworks`
---
-ALTER TABLE `reworks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de la tabla `roles`
---
-ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `stages`
---
-ALTER TABLE `stages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de la tabla `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `activities`
---
-ALTER TABLE `activities`
-  ADD CONSTRAINT `activities_stage_id_foreign` FOREIGN KEY (`stage_id`) REFERENCES `stages` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `activity_project`
---
-ALTER TABLE `activity_project`
-  ADD CONSTRAINT `activity_project_activity_id_foreign` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `activity_project_operator_id_foreign` FOREIGN KEY (`operator_id`) REFERENCES `operators` (`id`) ON DELETE SET NULL,
-  ADD CONSTRAINT `activity_project_project_id_foreign` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `comments`
---
-ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_activity_project_id_foreign` FOREIGN KEY (`activity_project_id`) REFERENCES `activity_project` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `comments_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
-
---
--- Filtros para la tabla `model_has_permissions`
---
-ALTER TABLE `model_has_permissions`
-  ADD CONSTRAINT `model_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `model_has_roles`
---
-ALTER TABLE `model_has_roles`
-  ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `projects`
---
-ALTER TABLE `projects`
-  ADD CONSTRAINT `projects_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `reworks`
---
-ALTER TABLE `reworks`
-  ADD CONSTRAINT `reworks_activity_project_id_foreign` FOREIGN KEY (`activity_project_id`) REFERENCES `activity_project` (`id`);
-
---
--- Filtros para la tabla `role_has_permissions`
---
-ALTER TABLE `role_has_permissions`
-  ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

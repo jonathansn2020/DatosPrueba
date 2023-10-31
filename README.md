@@ -8,3 +8,11 @@ El presente repositorio contiene datos de prueba del Sistema Web Control de la P
 -Activity_project
 
 -Comments
+
+-Roles
+
+-Permissions
+
+-Role_has_roles
+
+-Role_has_perrmissions
